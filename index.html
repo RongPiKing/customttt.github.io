@@ -1,210 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>论文首页 - CustomTTT: Motion and Appearance Customized Video Generation via Test-Time Training</title>
-    <!-- 引入 Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- 引入自定义的 CSS -->
-    <style>
-        /* 基础字体和背景色 */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            overflow-x: hidden;
-        }
+  <meta charset="utf-8">
+  
+  <meta property="og:title" content="CustomTTT: Motion and Appearance Customized Video Generation via Test-Time Training"/>
+  <meta property="og:url" content="https://your-research-website.com/CustomTTT"/>
+  <meta property="og:image" content="static/images/og_tag_header_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
-        /* 页头 */
-        header {
-            background-color: #111;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
+  <title>CustomTTT: Motion and Appearance Customized Video Generation via Test-Time Training</title>
 
-        header h1 {
-            font-size: 4rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="icon" href="static/figures/pen_sketch_drawing3.jpg">
 
-        header p {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
 
-        header .cta-button {
-            padding: 15px 30px;
-            font-size: 1rem;
-            background-color: #FF4D4D;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: background-color 0.3s ease;
-        }
-
-        header .cta-button:hover {
-            background-color: #FF2D2D;
-        }
-
-        /* 内容区域 */
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: #111;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .content-section {
-            margin-bottom: 80px;
-        }
-
-        .content-section h2 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .content-section p {
-            font-size: 1.1rem;
-            color: #555;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* GIF 图片展示 */
-        .gif-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            justify-items: center;
-        }
-
-        .gif-item {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .gif-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .gif-item img {
-            width: 100%;
-            height: auto;
-        }
-
-        .gif-item .description {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .gif-item h5 {
-            font-size: 1.5rem;
-            margin: 10px 0;
-            color: #333;
-        }
-
-        .gif-item p {
-            font-size: 1rem;
-            color: #777;
-        }
-
-        /* 页脚 */
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        footer a {
-            color: #FF4D4D;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #FF2D2D;
-        }
-
-    </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>欢迎来到我的论文主页</h1>
-        <p>论文标题: CustomTTT: Motion and Appearance Customized Video Generation via Test-Time Training</p>
-        <a href="path_to_paper.pdf" class="cta-button" download>点击下载论文</a>
-    </header>
-
-    <!-- Content -->
-    <div class="container">
-        <!-- 论文简介 -->
-        <section class="content-section">
-            <h2 class="section-title">论文简介</h2>
-            <p>本论文探讨了基于扩散模型的定制化视频生成，重点关注运动定制和外观定制。我们结合了运动信息和外观信息，生成既有参考视频的运动信息又有参考图像的外观信息的全新视频。</p>
-        </section>
-
-        <!-- 实验结果展示 -->
-        <section class="content-section">
-            <h2 class="section-title">实验结果展示</h2>
-            <div class="gif-container">
-                <!-- 第一个实验 GIF -->
-                <div class="gif-item">
-                    <img src="experiment1.gif" alt="实验1 GIF">
-                    <div class="description">
-                        <h5>实验1: 运动定制</h5>
-                        <p>展示了如何从参考视频中提取运动信息并应用到目标视频中。</p>
-                    </div>
-                </div>
-
-                <!-- 第二个实验 GIF -->
-                <div class="gif-item">
-                    <img src="experiment2.gif" alt="实验2 GIF">
-                    <div class="description">
-                        <h5>实验2: 外观定制</h5>
-                        <p>展示了如何从图片中提取外观信息并将其应用到新的视频生成中。</p>
-                    </div>
-                </div>
-
-                <!-- 第三个实验 GIF -->
-                <div class="gif-item">
-                    <img src="experiment3.gif" alt="实验3 GIF">
-                    <div class="description">
-                        <h5>实验3: 运动与外观结合</h5>
-                        <p>展示了如何将运动和外观信息结合生成最终的视频。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="publication-header">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <div class="column has-text-centered">
+        <h1 class="title is-1 publication-title">CustomTTT: Motion and Appearance Customized Video Generation via Test-Time Training</h1>
+      </div>
     </div>
+  </div>   
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>论文发布于AAAI 2025</p>
-        <p>联系我: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-    </footer>
+<section class="publication-author-block">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="" target="_blank">Your Name</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="" target="_blank">Co-Author 1</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="" target="_blank">Co-Author 2</a><sup>2</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Your Institution, <sup>2</sup>Co-Author Institution</span> 
+          </div>
+
+          <div style="text-align: center; font-size: 24px; font-weight: bold; font-family: 'Google Sans', sans-serif; margin: 12px;">
+            AAAI 2025
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.14572" target="_blank"
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+              <span class="link-block">
+                <a href="static/source/CustomTTT.pdf" target="_blank" 
+                  class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/your-username/CustomTTT" target="_blank"
+                class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+              </span>
+              
+              <span class="link-block">
+                <a href="https://colab.research.google.com/github/your-username/CustomTTT"  target="_blank"
+                   class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                      <i class="fas fa-infinity"></i>
+                  </span>
+                  <span>Colab</span>
+                </a>
+               </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/your-username/CustomTTT" target="_blank" class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-laptop fa-w-20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="laptop" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="container">
+          <div class="item">
+            <div class="column is-centered has-text-centered">
+              <img src="static/figures/teaser_video_generation.png" alt="CustomTTT"/>
+            </div>
+            <h2 class="subtitle">
+              We introduce our method <b>CustomTTT</b>, designed for motion and appearance customized video generation. By training at test time, our model learns to synthesize videos with customized motion from reference videos and appearance from images. This enables high-quality video generation with specific motion patterns and visual appearances. 
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The task of customizing video generation involves learning the motion and appearance aspects from different reference sources, which is traditionally a challenging task. In this paper, we introduce <b>CustomTTT</b>, a novel method that combines Test-Time Training (TTT) to generate customized videos. Our method takes advantage of motion patterns from reference videos and appearance characteristics from images to create new videos that combine these features. The key advantage of our approach lies in the ability to generate realistic videos with fine-grained motion control and appearance customization, enabling applications in entertainment, virtual reality, and personalized content creation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="column is-centered has-text-centered">
+        <h2 class="title has-text-centered">Motion and Appearance Customization</h2>
+        <div class="grid-container">
+          <div class="grid-item"><img src="static/figures/video_1.png" alt="Video 1"></div>
+          <div class="grid-item"><img src="static/figures/video_2.png" alt="Video 2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title">Acknowledgements</h2>
+    <p>This work was supported by XYZ Institution and ABC Lab. We would like to thank Dr. John Doe for insightful discussions and the members of DEF Lab for their technical support.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title">References</h2>
+    <ul>
+      <li>1. Your first reference.</li>
+      <li>2. Another relevant paper.</li>
+    </ul>
+  </div>
+</section>
 
 </body>
 </html>
