@@ -4,86 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>论文首页 - CustomTTT: Motion and Appearance Customized Video Generation via Test-Time Training</title>
-    <!-- 引入 Bootstrap 4/5 的 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- 引入自定义的 CSS -->
     <style>
+        /* 基础字体和背景色 */
         body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
 
-        .header {
-            background-color: #007bff;
+        /* 页头 */
+        header {
+            background-color: #333;
             color: white;
-            padding: 50px 0;
+            padding: 60px 0;
             text-align: center;
         }
 
-        .header h1 {
+        header h1 {
             font-size: 3rem;
-            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        .section-title {
-            color: #007bff;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+        header p {
+            font-size: 1.2rem;
         }
 
-        .gif-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 30px 0;
-        }
-
-        .gif-item {
-            width: 300px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .gif-item img {
-            width: 100%;
-            height: auto;
-        }
-
+        /* 页脚 */
         footer {
-            background-color: #343a40;
+            background-color: #222;
             color: white;
             padding: 30px 0;
             text-align: center;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 1rem;
-        }
-
         footer a {
-            color: #007bff;
+            color: #888;
             text-decoration: none;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: #fff;
+        }
+
+        /* 内容区域 */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* 论文下载按钮 */
+        .btn-download {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #777;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn-download:hover {
+            background-color: #444;
+        }
+
+        /* GIF 图片展示 */
+        .gif-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gif-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gif-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gif-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #f4f4f4;
+        }
+
+        .gif-item .description {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gif-item h5 {
+            font-size: 1.3rem;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .gif-item p {
+            font-size: 1rem;
+            color: #777;
         }
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <header class="header">
+    <header>
         <h1>欢迎来到我的论文主页</h1>
         <p>论文标题: CustomTTT: Motion and Appearance Customized Video Generation via Test-Time Training</p>
         <p>作者: [你的名字]</p>
     </header>
 
-    <!-- 论文简介 -->
+    <!-- Content -->
     <div class="container">
+        <!-- 论文简介 -->
         <section>
             <h2 class="section-title">论文简介</h2>
             <p>本论文探讨了基于扩散模型的定制化视频生成，重点关注运动定制和外观定制。我们结合了运动信息和外观信息，生成既有参考视频的运动信息又有参考图像的外观信息的全新视频。</p>
@@ -93,7 +144,7 @@
         <section>
             <h2 class="section-title">论文下载</h2>
             <p>你可以从以下链接下载我的论文:</p>
-            <a href="path_to_paper.pdf" class="btn btn-primary" download>点击下载论文</a>
+            <a href="path_to_paper.pdf" class="btn-download" download>点击下载论文</a>
         </section>
 
         <!-- 展示不同实验的 GIF -->
@@ -103,7 +154,7 @@
                 <!-- 第一个实验 GIF -->
                 <div class="gif-item">
                     <img src="experiment1.gif" alt="实验1 GIF">
-                    <div class="p-2">
+                    <div class="description">
                         <h5>实验1: 运动定制</h5>
                         <p>展示了如何从参考视频中提取运动信息并应用到目标视频中。</p>
                     </div>
@@ -112,7 +163,7 @@
                 <!-- 第二个实验 GIF -->
                 <div class="gif-item">
                     <img src="experiment2.gif" alt="实验2 GIF">
-                    <div class="p-2">
+                    <div class="description">
                         <h5>实验2: 外观定制</h5>
                         <p>展示了如何从图片中提取外观信息并将其应用到新的视频生成中。</p>
                     </div>
@@ -121,7 +172,7 @@
                 <!-- 第三个实验 GIF -->
                 <div class="gif-item">
                     <img src="experiment3.gif" alt="实验3 GIF">
-                    <div class="p-2">
+                    <div class="description">
                         <h5>实验3: 运动与外观结合</h5>
                         <p>展示了如何将运动和外观信息结合生成最终的视频。</p>
                     </div>
@@ -136,9 +187,5 @@
         <p>联系我: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
     </footer>
 
-    <!-- 引入 Bootstrap 4/5 的 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
-
