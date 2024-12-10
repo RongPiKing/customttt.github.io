@@ -4,28 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>论文首页 - CustomTTT: Motion and Appearance Customized Video Generation via Test-Time Training</title>
+    <!-- 引入 Bootstrap 4/5 的 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入自定义的 CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .section-title {
+            color: #007bff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .gif-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .gif-item {
+            width: 300px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .gif-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <header>
+
+    <!-- Header -->
+    <header class="header">
         <h1>欢迎来到我的论文主页</h1>
         <p>论文标题: CustomTTT: Motion and Appearance Customized Video Generation via Test-Time Training</p>
         <p>作者: [你的名字]</p>
     </header>
 
-    <section>
-        <h2>论文简介</h2>
-        <p>本论文探讨了基于扩散模型的定制化视频生成，重点关注运动定制和外观定制。...</p>
-    </section>
+    <!-- 论文简介 -->
+    <div class="container">
+        <section>
+            <h2 class="section-title">论文简介</h2>
+            <p>本论文探讨了基于扩散模型的定制化视频生成，重点关注运动定制和外观定制。我们结合了运动信息和外观信息，生成既有参考视频的运动信息又有参考图像的外观信息的全新视频。</p>
+        </section>
 
-    <section>
-        <h2>论文下载</h2>
-        <p>你可以从以下链接下载我的论文:</p>
-        <a href="path_to_paper.pdf" download>点击下载论文</a>
-    </section>
+        <!-- 论文下载链接 -->
+        <section>
+            <h2 class="section-title">论文下载</h2>
+            <p>你可以从以下链接下载我的论文:</p>
+            <a href="path_to_paper.pdf" class="btn btn-primary" download>点击下载论文</a>
+        </section>
 
+        <!-- 展示不同实验的 GIF -->
+        <section>
+            <h2 class="section-title">实验结果展示</h2>
+            <div class="gif-container">
+                <!-- 第一个实验 GIF -->
+                <div class="gif-item">
+                    <img src="experiment1.gif" alt="实验1 GIF">
+                    <div class="p-2">
+                        <h5>实验1: 运动定制</h5>
+                        <p>展示了如何从参考视频中提取运动信息并应用到目标视频中。</p>
+                    </div>
+                </div>
+
+                <!-- 第二个实验 GIF -->
+                <div class="gif-item">
+                    <img src="experiment2.gif" alt="实验2 GIF">
+                    <div class="p-2">
+                        <h5>实验2: 外观定制</h5>
+                        <p>展示了如何从图片中提取外观信息并将其应用到新的视频生成中。</p>
+                    </div>
+                </div>
+
+                <!-- 第三个实验 GIF -->
+                <div class="gif-item">
+                    <img src="experiment3.gif" alt="实验3 GIF">
+                    <div class="p-2">
+                        <h5>实验3: 运动与外观结合</h5>
+                        <p>展示了如何将运动和外观信息结合生成最终的视频。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <p>论文发布于AAAI 2025</p>
         <p>联系我: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
     </footer>
+
+    <!-- 引入 Bootstrap 4/5 的 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
+
